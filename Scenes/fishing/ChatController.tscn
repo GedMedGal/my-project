@@ -1,0 +1,110 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp5j71thgif8j"]
+
+[ext_resource type="Script" uid="uid://dc4t08a6a2a8h" path="res://Scripts/fishing/chat_controller.gd" id="1_81f8l"]
+[ext_resource type="Script" uid="uid://c7jy4w71ub3if" path="res://Scripts/chat_server_controller.gd" id="2_1endu"]
+
+[sub_resource type="GDScript" id="GDScript_1endu"]
+script/source = "extends Control
+
+func _ready() -> void:
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+func _gui_input(event):
+	if event is InputEventScreenTouch and event.pressed:
+		print_debug(\"ТАП ЗАБЛОКИРОВАН ЧАТОМ\")
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1endu"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+border_width_top = 49
+border_color = Color(0.8001019, 0.8001019, 0.8001019, 0)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Chat" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_81f8l")
+
+[node name="TouchBlocker" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0.0050000004)
+anchors_preset = 0
+offset_right = 184.0
+offset_bottom = 320.0
+mouse_filter = 2
+script = SubResource("GDScript_1endu")
+
+[node name="MiniPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 279.0
+offset_right = 136.0
+offset_bottom = 318.99997
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_1endu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MiniPanel"]
+layout_mode = 0
+offset_right = 87.0
+offset_bottom = 25.0
+theme_override_font_sizes/normal_font_size = 4
+
+[node name="Button" type="Button" parent="MiniPanel"]
+layout_mode = 0
+offset_top = 25.0
+offset_right = 88.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 4
+text = "Type in chat..."
+flat = true
+alignment = 0
+
+[node name="MainPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 144.0
+offset_right = 184.0
+offset_bottom = 204.0
+mouse_filter = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MainPanel"]
+layout_mode = 0
+offset_right = 184.0
+offset_bottom = 61.0
+theme_override_font_sizes/normal_font_size = 4
+
+[node name="LineEdit" type="LineEdit" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.989
+anchor_bottom = 1.0
+offset_top = 61.0
+offset_right = 2.024002
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 4
+placeholder_text = "hghg"
+
+[node name="Button" type="Button" parent="MainPanel"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = -8.0
+offset_right = 184.0
+
+[node name="ChatController" type="Node2D" parent="."]
+script = ExtResource("2_1endu")
+metadata/_custom_type_script = "uid://c7jy4w71ub3if"
+
+[connection signal="pressed" from="MiniPanel/Button" to="." method="_on_MINI_button_pressed"]
+[connection signal="pressed" from="MainPanel/Button" to="." method="_on_MAIN_button_pressed"]

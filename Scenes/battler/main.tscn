@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://ct08hlmb4o7k"]
+
+[ext_resource type="Script" uid="uid://ctovlkivbqqkr" path="res://Scripts/battler/main.gd" id="1_21xkr"]
+[ext_resource type="Script" uid="uid://c5hquiilqg3bf" path="res://Scripts/battler/chapter_control.gd" id="3_344ge"]
+[ext_resource type="Script" uid="uid://wh6e3ce0kgv1" path="res://Scripts/battler/player.gd" id="4_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://00m5a6yqo0kn" path="res://assets/battler/fc728.png" id="5_344ge"]
+[ext_resource type="Script" uid="uid://cvh7kghvrlm5h" path="res://Scripts/battler/enemy.gd" id="6_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://blepvk8s5fqcg" path="res://assets/battler/fc2148.png" id="6_ynf5e"]
+[ext_resource type="Script" uid="uid://csbctdsdu0w5a" path="res://Scenes/battler/control.gd" id="7_6bp64"]
+
+[node name="Battler" type="Node2D" node_paths=PackedStringArray("ChapterControler", "player")]
+script = ExtResource("1_21xkr")
+ChapterControler = NodePath("ChapterControl")
+player = NodePath("Player")
+
+[node name="7d17532a428354Ee700Ebc373Efadec8" type="Sprite2D" parent="."]
+position = Vector2(90.00001, 159.49998)
+scale = Vector2(0.24456517, 0.7753623)
+
+[node name="ChapterControl" type="Node" parent="." node_paths=PackedStringArray("main")]
+script = ExtResource("3_344ge")
+main = NodePath("..")
+metadata/_custom_type_script = "uid://c5hquiilqg3bf"
+
+[node name="Player" type="Node2D" parent="." node_paths=PackedStringArray("main", "attack_button", "block_button")]
+script = ExtResource("4_ynf5e")
+main = NodePath("..")
+attack_button = NodePath("AttackButton")
+block_button = NodePath("BlockButton")
+
+[node name="HP" type="Label" parent="Player"]
+anchors_preset = -1
+offset_right = 196.0
+offset_bottom = 131.0
+
+[node name="AttackButton" type="TextureButton" parent="Player"]
+anchors_preset = -1
+offset_left = 19.0
+offset_top = 255.0
+offset_right = 66.0
+offset_bottom = 302.0
+texture_normal = ExtResource("5_344ge")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BlockButton" type="TextureButton" parent="Player"]
+anchors_preset = -1
+offset_left = 111.0
+offset_top = 254.0
+offset_right = 155.0
+offset_bottom = 298.0
+texture_normal = ExtResource("6_ynf5e")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Score" type="Label" parent="Player"]
+anchors_preset = -1
+offset_left = 845.0
+offset_top = 1.0
+offset_right = 1151.0869
+offset_bottom = 177.0
+
+[node name="Enemy" type="Node2D" parent="." node_paths=PackedStringArray("main", "player")]
+script = ExtResource("6_d1ilt")
+main = NodePath("..")
+player = NodePath("../Player")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy"]
+position = Vector2(91, 129)
+
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("label", "main")]
+layout_mode = 3
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_6bp64")
+label = NodePath("Label")
+main = NodePath("..")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 1.0
+offset_right = 649.0
+offset_bottom = 83.0
+
+[connection signal="chapter_update" from="." to="ChapterControl" method="_on_main_chapter_update"]
+[connection signal="enemy_turn" from="." to="Enemy" method="_on_main_enemy_turn"]
+[connection signal="player_update" from="." to="Player" method="_on_main_player_update"]
+[connection signal="pressed" from="Player/AttackButton" to="Player" method="_on_attack_button_pressed"]
+[connection signal="pressed" from="Player/BlockButton" to="Player" method="_on_block_button_pressed"]
+[connection signal="enemy_dead" from="Enemy" to="." method="_on_enemy_enemy_dead"]

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://ef3wbo50n2fw"
+
+[deps]
+
+files=["res://translation/tableConvert.com_gm2wb4.en.translation", "res://translation/tableConvert.com_gm2wb4.ru.translation"]
+
+source_file="res://translation/tableConvert.com_gm2wb4.csv"
+dest_files=["res://translation/tableConvert.com_gm2wb4.en.translation", "res://translation/tableConvert.com_gm2wb4.ru.translation"]
+
+[params]
+
+compress=true
+delimiter=0

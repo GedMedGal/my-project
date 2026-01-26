@@ -1,0 +1,527 @@
+[gd_scene load_steps=60 format=3 uid="uid://bqcwp3ar1om2g"]
+
+[ext_resource type="Script" uid="uid://bsm4vk7xok37o" path="res://Scripts/fishing/fishing.gd" id="1_pb04o"]
+[ext_resource type="Texture2D" uid="uid://cnt30281kd8op" path="res://assets/fishing/Dock/8.png" id="2_kv4ip"]
+[ext_resource type="Texture2D" uid="uid://ctuatmwn6vmv8" path="res://assets/fishing/Dock/1.png" id="3_a753u"]
+[ext_resource type="Texture2D" uid="uid://bgcwiy8m80byf" path="res://assets/fishing/Dock/2.png" id="4_rvow5"]
+[ext_resource type="Texture2D" uid="uid://2t2621g06tgs" path="res://assets/fishing/Dock/3.png" id="5_bb7o1"]
+[ext_resource type="Texture2D" uid="uid://cos8o1pdqh4nh" path="res://assets/fishing/Dock/5.png" id="6_cyal1"]
+[ext_resource type="Texture2D" uid="uid://e77wuu30tvm4" path="res://assets/fishing/Dock/6.png" id="7_wrs26"]
+[ext_resource type="Texture2D" uid="uid://bcj1lr8lxfilh" path="res://assets/fishing/Dock/7.png" id="8_kveti"]
+[ext_resource type="Texture2D" uid="uid://dhx3rel28su65" path="res://assets/fishing/3 Objects/Boat.png" id="9_gnpls"]
+[ext_resource type="Texture2D" uid="uid://bs6llvf54iw10" path="res://assets/fishing/3 Objects/Fishbarrel2.png" id="10_n1a5l"]
+[ext_resource type="Texture2D" uid="uid://c1yl1so5bg6hy" path="res://assets/fishing/2 Character animation/GraveRobber_hook.png" id="11_h22io"]
+[ext_resource type="Texture2D" uid="uid://bb3yci87itgkx" path="res://assets/fishing/2 Character animation/GraveRobber_fish.png" id="12_1ofqb"]
+[ext_resource type="Texture2D" uid="uid://clg463ifk5rh4" path="res://assets/fishing/3nak.png" id="13_a4g80"]
+[ext_resource type="Script" uid="uid://d3xcg4rta1pna" path="res://Scripts/fishing/canvas_layer.gd" id="14_a753u"]
+[ext_resource type="Script" uid="uid://csnmkomqlm4h6" path="res://Scripts/fishing/world_events.gd" id="15_n1a5l"]
+[ext_resource type="PackedScene" uid="uid://cqda122mnhrct" path="res://Scenes/fishing/TextUpdater.tscn" id="15_wrs26"]
+[ext_resource type="Texture2D" uid="uid://cmj2cl1ao80lp" path="res://assets/fishing/leafes.png" id="16_rvow5"]
+[ext_resource type="Shader" uid="uid://njlhwxdm2u3q" path="res://Scripts/fishing/fishing_water.gdshader" id="17_cyal1"]
+[ext_resource type="PackedScene" uid="uid://d2fdykd7hhos7" path="res://Scenes/fishing/time_changer.tscn" id="17_kveti"]
+[ext_resource type="Texture2D" uid="uid://cu0hoh6xetjrj" path="res://assets/fishing/ss.png" id="18_wrs26"]
+[ext_resource type="Texture2D" uid="uid://ducb6ew43pdt1" path="res://assets/fishing/atlantean clock dawn.png" id="21_n1a5l"]
+[ext_resource type="Texture2D" uid="uid://ul8dbnu4npkm" path="res://assets/fishing/atlantean clock 1.png" id="22_h22io"]
+[ext_resource type="PackedScene" uid="uid://dp5j71thgif8j" path="res://Scenes/fishing/ChatController.tscn" id="25_a4g80"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq34d"]
+atlas = ExtResource("11_h22io")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6xie"]
+atlas = ExtResource("11_h22io")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3uht7"]
+atlas = ExtResource("11_h22io")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvsla"]
+atlas = ExtResource("11_h22io")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bpuk"]
+atlas = ExtResource("11_h22io")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymsm3"]
+atlas = ExtResource("11_h22io")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vemvo"]
+atlas = ExtResource("12_1ofqb")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2tey"]
+atlas = ExtResource("12_1ofqb")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4npsg"]
+atlas = ExtResource("12_1ofqb")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hot2p"]
+atlas = ExtResource("12_1ofqb")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvsla"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq34d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6xie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uht7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvsla")
+}],
+"loop": false,
+"name": &"hook_end",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvsla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bpuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3uht7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6xie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymsm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq34d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq34d")
+}],
+"loop": false,
+"name": &"hook_start",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vemvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2tey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4npsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hot2p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_kveti"]
+offsets = PackedFloat32Array(0, 0.9859649)
+colors = PackedColorArray(1, 1, 1, 0.5411765, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gnpls"]
+gradient = SubResource("Gradient_kveti")
+fill = 1
+fill_from = Vector2(0.48290598, 0.51282054)
+fill_to = Vector2(0.6367521, 0.44444445)
+
+[sub_resource type="GDScript" id="GDScript_kveti"]
+script/source = "extends Label
+
+
+func _process(delta: float) -> void:
+	text = TimeChanger.get_string_season_and_time() + '\\n'
+	text += str(TimeChanger.current_date['day']) + ' '+ str(TimeChanger.current_date['month']) + \\
+	 ' '+str(TimeChanger.current_date['year'])# + TimeChanger.current_hour
+"
+
+[sub_resource type="Gradient" id="Gradient_a753u"]
+offsets = PackedFloat32Array(0.0033444816, 0.48494983, 1)
+colors = PackedColorArray(0.6313726, 0.8392157, 0.69803923, 0, 0.8094693, 0.9163155, 0.84470034, 1, 0.6313726, 0.8392157, 0.69803923, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rvow5"]
+gradient = SubResource("Gradient_a753u")
+width = 1
+height = 32
+fill_to = Vector2(0.41025642, 1)
+
+[sub_resource type="Gradient" id="Gradient_bb7o1"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cyal1"]
+gradient = SubResource("Gradient_bb7o1")
+
+[sub_resource type="Gradient" id="Gradient_wrs26"]
+offsets = PackedFloat32Array(0, 0.46666667, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kveti"]
+gradient = SubResource("Gradient_wrs26")
+
+[sub_resource type="Curve" id="Curve_gnpls"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.08540925, 47.507324), 0.0, 0.0, 0, 0, Vector2(0.16725978, -21.11438), 0.0, 0.0, 0, 0, Vector2(0.24911031, 39.88269), 0.0, 0.0, 0, 0, Vector2(0.3558719, -2.0527954), 0.0, 0.0, 0, 0, Vector2(0.46975088, 55.131958), 0.0, 0.0, 0, 0, Vector2(0.58007115, -21.11438), 0.0, 0.0, 0, 0, Vector2(0.6868327, 58.944275), 0.0, 0.0, 0, 0, Vector2(0.8256228, -24.926697), 0.0, 0.0, 0, 0, Vector2(0.9288256, 47.507324), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 11
+
+[sub_resource type="CurveTexture" id="CurveTexture_n1a5l"]
+curve = SubResource("Curve_gnpls")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a753u"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 200, 1)
+angle_min = -63.09999
+angle_max = 1.0728836e-05
+gravity = Vector3(-98, 20, 0)
+tangential_accel_min = -2.2351742e-06
+tangential_accel_max = 5.9999976
+tangential_accel_curve = SubResource("CurveTexture_n1a5l")
+damping_max = 100.00001
+scale_min = 1.5
+scale_max = 1.8
+color_ramp = SubResource("GradientTexture1D_kveti")
+color_initial_ramp = SubResource("GradientTexture1D_cyal1")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bb7o1"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_cyal1"]
+offsets = PackedFloat32Array(0, 0.18431373, 0.81960785, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wrs26"]
+gradient = SubResource("Gradient_cyal1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kveti"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(180, 180, 200)
+direction = Vector3(-1, 0, 0)
+spread = 20.0
+initial_velocity_max = 14.969999
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = 59.99998
+gravity = Vector3(-40, 10, 0)
+scale_min = 0.099999994
+scale_max = 0.79999995
+color_ramp = SubResource("GradientTexture1D_wrs26")
+anim_offset_max = 1.0
+
+[sub_resource type="Gradient" id="Gradient_n1a5l"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_h22io"]
+gradient = SubResource("Gradient_n1a5l")
+
+[sub_resource type="Curve" id="Curve_1ofqb"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.16479403, 0.7359375), 0.0, 0.0, 0, 0, Vector2(0.38951313, 0.1468749), 0.0, 0.0, 0, 0, Vector2(0.58426964, 0.8882813), 0.0, 0.0, 0, 0, Vector2(0.8726592, 0.5328125), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="CurveTexture" id="CurveTexture_a4g80"]
+curve = SubResource("Curve_1ofqb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p68vd"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(150, 200, 1)
+angle_min = -23.599989
+angle_max = 23.70001
+direction = Vector3(0, 1, 0)
+initial_velocity_max = 101.64
+gravity = Vector3(0, 10, 0)
+scale_max = 4.2799997
+scale_curve = SubResource("CurveTexture_a4g80")
+color_ramp = SubResource("GradientTexture1D_h22io")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kveti"]
+frequency = 0.03
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gnpls"]
+noise = SubResource("FastNoiseLite_kveti")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n1a5l"]
+shader = ExtResource("17_cyal1")
+shader_parameter/water_color = Color(0.1602079, 0.7589362, 0.8837891, 1)
+shader_parameter/wave_noise = SubResource("NoiseTexture2D_gnpls")
+
+[sub_resource type="GDScript" id="GDScript_n1a5l"]
+script/source = "extends Node2D
+
+
+func _process(delta: float) -> void:
+	var t = TimeChanger.current_hour
+	var T = (t + t/60 + t/3600)
+	$AtlanteanClockDawn.rotation_degrees = -90.0 - 15.0 * T
+"
+
+[node name="Fishing" type="Node2D" node_paths=PackedStringArray("water", "underwater", "earth", "player_anim", "ParalaxTimer", "sign", "UI", "point_light")]
+script = ExtResource("1_pb04o")
+water = NodePath("Parallax/Вода")
+underwater = NodePath("Parallax/Вода2")
+earth = NodePath("Parallax/Земля и Камни")
+player_anim = NodePath("Parallax/Node2D/AnimatedSprite2D")
+ParalaxTimer = NodePath("ParalaxTimer")
+sign = NodePath("TimeChanger/3Nak")
+UI = NodePath("CanvasLayer")
+point_light = NodePath("CanvasLayer/PointLight2D")
+
+[node name="Parallax" type="Node2D" parent="."]
+
+[node name="8" type="Sprite2D" parent="Parallax"]
+position = Vector2(92, -37.49999)
+scale = Vector2(1, 1.9027778)
+texture = ExtResource("2_kv4ip")
+
+[node name="Облака" type="Parallax2D" parent="Parallax"]
+repeat_size = Vector2(300, 0)
+autoscroll = Vector2(-20, 0)
+
+[node name="1" type="Sprite2D" parent="Parallax/Облака"]
+position = Vector2(117, 108)
+texture = ExtResource("3_a753u")
+
+[node name="Parallax2D" type="Parallax2D" parent="Parallax"]
+repeat_size = Vector2(379, 0)
+
+[node name="2" type="Sprite2D" parent="Parallax/Parallax2D"]
+position = Vector2(103, 176)
+texture = ExtResource("4_rvow5")
+
+[node name="3" type="Sprite2D" parent="Parallax/Parallax2D"]
+position = Vector2(99, 182)
+texture = ExtResource("5_bb7o1")
+
+[node name="Деревья" type="Parallax2D" parent="Parallax"]
+repeat_size = Vector2(379, 0)
+
+[node name="6" type="Sprite2D" parent="Parallax/Деревья"]
+position = Vector2(127, 183)
+texture = ExtResource("6_cyal1")
+
+[node name="5" type="Sprite2D" parent="Parallax/Деревья"]
+position = Vector2(111, 184)
+texture = ExtResource("6_cyal1")
+
+[node name="Земля и Камни" type="Parallax2D" parent="Parallax"]
+repeat_size = Vector2(384, 0)
+
+[node name="6" type="Sprite2D" parent="Parallax/Земля и Камни"]
+position = Vector2(92, 195)
+texture = ExtResource("7_wrs26")
+
+[node name="7" type="Sprite2D" parent="Parallax/Земля и Камни"]
+position = Vector2(92, 68)
+texture = ExtResource("8_kveti")
+
+[node name="Вода" type="Parallax2D" parent="Parallax"]
+scroll_offset = Vector2(0, 36)
+repeat_size = Vector2(453.25, 0)
+autoscroll = Vector2(2, 0)
+
+[node name="8" type="Sprite2D" parent="Parallax/Вода"]
+position = Vector2(-101.99998, 34.000008)
+scale = Vector2(1.1805556, 1.1805556)
+texture = ExtResource("2_kv4ip")
+centered = false
+
+[node name="Node2D" type="Node2D" parent="Parallax"]
+y_sort_enabled = true
+
+[node name="Boat" type="Sprite2D" parent="Parallax/Node2D"]
+position = Vector2(83, 185)
+texture = ExtResource("9_gnpls")
+
+[node name="Fishbarrel2" type="Sprite2D" parent="Parallax/Node2D"]
+position = Vector2(58, 178)
+texture = ExtResource("10_n1a5l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Parallax/Node2D"]
+position = Vector2(104, 167)
+sprite_frames = SubResource("SpriteFrames_dvsla")
+animation = &"hook_end"
+autoplay = "idle"
+
+[node name="Вода2" type="Parallax2D" parent="Parallax"]
+repeat_size = Vector2(384, 0)
+autoscroll = Vector2(-2, 0)
+
+[node name="8" type="Sprite2D" parent="Parallax/Вода2"]
+position = Vector2(191, 208)
+texture = ExtResource("2_kv4ip")
+
+[node name="ParalaxTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="FishTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="CatchingTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("main", "texture_rect", "label", "control")]
+script = ExtResource("14_a753u")
+main = NodePath("..")
+texture_rect = NodePath("Control/TextureRect")
+label = NodePath("Control/FishInfoLabel")
+control = NodePath("Control")
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+offset_left = 80.0
+offset_top = 56.0
+offset_right = 120.0
+offset_bottom = 96.0
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = -80.0
+offset_top = -41.0
+offset_right = -18.666664
+offset_bottom = -8.0
+scale = Vector2(3, 3)
+stretch_mode = 3
+
+[node name="FishInfoLabel" parent="CanvasLayer/Control" node_paths=PackedStringArray("control") instance=ExtResource("15_wrs26")]
+layout_mode = 0
+anchors_preset = 0
+offset_left = -16.0
+offset_top = 24.0
+offset_right = 40.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 12
+control = NodePath("..")
+
+[node name="PointLight2D" type="PointLight2D" parent="CanvasLayer"]
+position = Vector2(58, 174.99997)
+texture = SubResource("GradientTexture2D_gnpls")
+texture_scale = 6.19
+
+[node name="CurrentTimeLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+offset_left = 136.0
+offset_top = 278.0
+offset_right = 184.0
+offset_bottom = 320.0
+theme_override_font_sizes/font_size = 8
+text = "WINTER 
+MORNING
+44:33:33"
+horizontal_alignment = 2
+vertical_alignment = 2
+autowrap_mode = 3
+script = SubResource("GDScript_kveti")
+
+[node name="WorldEvents" type="Node2D" parent="." node_paths=PackedStringArray("timer", "notifications")]
+script = ExtResource("15_n1a5l")
+timer = NodePath("EventTimer")
+notifications = NodePath("Control/EventNotifications")
+
+[node name="WIND" type="GPUParticles2D" parent="WorldEvents"]
+position = Vector2(256, 112)
+amount = 15
+texture = SubResource("GradientTexture2D_rvow5")
+lifetime = 5.0
+preprocess = 2.0
+randomness = 1.0
+trail_enabled = true
+trail_lifetime = 0.6
+process_material = SubResource("ParticleProcessMaterial_a753u")
+
+[node name="FOLIAGE" type="GPUParticles2D" parent="WorldEvents"]
+material = SubResource("CanvasItemMaterial_bb7o1")
+position = Vector2(112, 160)
+emitting = false
+amount = 50
+texture = ExtResource("16_rvow5")
+lifetime = 5.0
+visibility_rect = Rect2(-100, -100, 320, 360)
+process_material = SubResource("ParticleProcessMaterial_kveti")
+
+[node name="SNOW" type="GPUParticles2D" parent="WorldEvents"]
+position = Vector2(121, 155)
+emitting = false
+amount = 1600
+lifetime = 5.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_p68vd")
+
+[node name="Water" type="Sprite2D" parent="WorldEvents"]
+material = SubResource("ShaderMaterial_n1a5l")
+position = Vector2(104.00001, 272)
+scale = Vector2(15, 1.2499999)
+texture = ExtResource("18_wrs26")
+
+[node name="EventTimer" type="Timer" parent="WorldEvents"]
+autostart = true
+
+[node name="Control" type="Control" parent="WorldEvents"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EventNotifications" parent="WorldEvents/Control" node_paths=PackedStringArray("control") instance=ExtResource("15_wrs26")]
+layout_mode = 1
+offset_left = 1.0
+offset_top = 278.0
+offset_right = 47.0
+offset_bottom = 321.0
+theme_override_font_sizes/font_size = 8
+text = "CURRENT EVENT
+SNOW"
+horizontal_alignment = 0
+vertical_alignment = 2
+autowrap_mode = 3
+control = NodePath("..")
+
+[node name="TimeChanger" parent="." instance=ExtResource("17_kveti")]
+
+[node name="3Nak" type="Sprite2D" parent="TimeChanger"]
+visible = false
+position = Vector2(97, 148)
+scale = Vector2(0.23437512, 0.23437512)
+texture = ExtResource("13_a4g80")
+
+[node name="Clock" type="Node2D" parent="TimeChanger"]
+script = SubResource("GDScript_n1a5l")
+
+[node name="AtlanteanClockDawn" type="Sprite2D" parent="TimeChanger/Clock"]
+position = Vector2(164.5, 17.5)
+scale = Vector2(0.3, -0.3)
+texture = ExtResource("21_n1a5l")
+offset = Vector2(-0.5, 4.5)
+
+[node name="AtlanteanClock1" type="Sprite2D" parent="TimeChanger/Clock"]
+position = Vector2(164.5, 20.5)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("22_h22io")
+
+[node name="UI_CHAT" type="CanvasLayer" parent="."]
+
+[node name="Chat" parent="UI_CHAT" instance=ExtResource("25_a4g80")]
+anchors_preset = -1
+
+[connection signal="timeout" from="ParalaxTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="FishTimer" to="." method="_on_fish_timer_timeout"]
+[connection signal="timeout" from="CatchingTimer" to="." method="_on_catching_timer_timeout"]
+[connection signal="timeout" from="WorldEvents/EventTimer" to="WorldEvents" method="_on_event_timer_timeout"]

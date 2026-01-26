@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqda122mnhrct"]
+
+[ext_resource type="Script" uid="uid://c73f3xddw043n" path="res://Scripts/fishing/text_updater.gd" id="1_yigs8"]
+
+[node name="Label" type="Label"]
+anchors_preset = -1
+offset_left = 64.0
+offset_top = 72.0
+offset_right = 120.0
+offset_bottom = 96.0
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("1_yigs8")

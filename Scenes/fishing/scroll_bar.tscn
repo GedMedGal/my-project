@@ -1,0 +1,277 @@
+[gd_scene load_steps=50 format=3 uid="uid://chbfbd8semos7"]
+
+[ext_resource type="Script" uid="uid://5s4lt3uuuwll" path="res://Scripts/fishing/scroll_bar.gd" id="1_3yadg"]
+[ext_resource type="Texture2D" uid="uid://bidxwp3pndlt1" path="res://assets/fishing/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png" id="1_5wbxj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nwy1w"]
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_3yadg"]
+default_font_size = 9
+TooltipPanel/colors/title_color = Color(0, 0, 0, 1)
+TooltipPanel/styles/panel = SubResource("StyleBoxTexture_nwy1w")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3yadg"]
+bg_color = Color(0.38131288, 0.7428335, 0.8295428, 1)
+border_width_left = 3
+border_width_right = 3
+border_color = Color(0.38039216, 0.7411765, 0.827451, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbk0x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3yadg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4vhd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g112c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_is4gq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nwy1w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vbg2g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qiu3e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yadg"]
+atlas = ExtResource("1_5wbxj")
+region = Rect2(27, 30, 14, 13)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jbk0x"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwy1w"]
+atlas = SubResource("CompressedTexture2D_jbk0x")
+region = Rect2(52, 29, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f4vhd"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g112c"]
+atlas = SubResource("CompressedTexture2D_f4vhd")
+region = Rect2(77, 30, 14, 13)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_is4gq"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiu3e"]
+atlas = SubResource("CompressedTexture2D_is4gq")
+region = Rect2(99, 30, 15, 15)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vbg2g"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf7od"]
+atlas = SubResource("CompressedTexture2D_vbg2g")
+region = Rect2(123, 29, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l0e84"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2fmg"]
+atlas = SubResource("CompressedTexture2D_l0e84")
+region = Rect2(149, 29, 14, 14)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iiuh0"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljcmu"]
+atlas = SubResource("CompressedTexture2D_iiuh0")
+region = Rect2(171, 28, 15, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_otunh"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0yht"]
+atlas = SubResource("CompressedTexture2D_otunh")
+region = Rect2(267, 53, 16, 14)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ntsvv"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imvcn"]
+atlas = SubResource("CompressedTexture2D_ntsvv")
+region = Rect2(267, 53, 16, 14)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7aflq"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d2a3"]
+atlas = SubResource("CompressedTexture2D_7aflq")
+region = Rect2(267, 53, 16, 14)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_508bq"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg1an"]
+atlas = SubResource("CompressedTexture2D_508bq")
+region = Rect2(267, 53, 16, 14)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qmjaq"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enyat"]
+atlas = SubResource("CompressedTexture2D_qmjaq")
+region = Rect2(338, 79, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iyctu"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11pk5"]
+atlas = SubResource("CompressedTexture2D_iyctu")
+region = Rect2(338, 79, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4vxgx"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xos5o"]
+atlas = SubResource("CompressedTexture2D_4vxgx")
+region = Rect2(338, 79, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_48lcc"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nh21"]
+atlas = SubResource("CompressedTexture2D_48lcc")
+region = Rect2(338, 79, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cvdfy"]
+load_path = "res://.godot/imported/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png-41589781a33f834ceffc1db4c83bc85c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_memak"]
+atlas = SubResource("CompressedTexture2D_cvdfy")
+region = Rect2(338, 79, 16, 16)
+
+[sub_resource type="Gradient" id="Gradient_3yadg"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jbk0x"]
+gradient = SubResource("Gradient_3yadg")
+
+[sub_resource type="Curve" id="Curve_3yadg"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.16479403, 0.7359375), 0.0, 0.0, 0, 0, Vector2(0.38951313, 0.1468749), 0.0, 0.0, 0, 0, Vector2(0.58426964, 0.8882813), 0.0, 0.0, 0, 0, Vector2(0.8726592, 0.5328125), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="CurveTexture" id="CurveTexture_jbk0x"]
+curve = SubResource("Curve_3yadg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nwy1w"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 200, 1)
+angle_min = -23.599989
+angle_max = 23.70001
+direction = Vector3(0, 1, 0)
+initial_velocity_max = 101.64
+gravity = Vector3(0, 10, 0)
+scale_max = 4.2799997
+scale_curve = SubResource("CurveTexture_jbk0x")
+color_ramp = SubResource("GradientTexture1D_jbk0x")
+
+[node name="FishScrollBar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3yadg")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.72372514
+anchor_bottom = 0.07011087
+offset_left = -15.0
+offset_right = 182.07042
+offset_bottom = 349.25256
+grow_horizontal = 2
+scale = Vector2(0.56372404, 0.56372404)
+tab_alignment = 1
+current_tab = 0
+
+[node name="Winter" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+tab_alignment = 1
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Winter"]
+layout_mode = 0
+offset_left = 26.608765
+offset_top = 0.93051624
+offset_right = 567.6536
+offset_bottom = 543.7493
+
+[node name="ItemList" type="ItemList" parent="TabContainer/Winter/MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_3yadg")
+theme_override_colors/font_color = Color(0.64995646, 0.64995646, 0.64995646, 0)
+theme_override_colors/font_hovered_color = Color(0.9499975, 0.9499975, 0.9499975, 0)
+theme_override_colors/font_hovered_selected_color = Color(1, 1, 1, 0)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+theme_override_colors/guide_color = Color(0.7, 0.7, 0.7, 0.25)
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_3yadg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jbk0x")
+theme_override_styles/hovered = SubResource("StyleBoxEmpty_3yadg")
+theme_override_styles/hovered_selected = SubResource("StyleBoxEmpty_f4vhd")
+theme_override_styles/hovered_selected_focus = SubResource("StyleBoxEmpty_g112c")
+theme_override_styles/selected = SubResource("StyleBoxEmpty_is4gq")
+theme_override_styles/selected_focus = SubResource("StyleBoxEmpty_nwy1w")
+theme_override_styles/cursor_unfocused = SubResource("StyleBoxEmpty_vbg2g")
+theme_override_styles/cursor = SubResource("StyleBoxEmpty_qiu3e")
+allow_search = false
+item_count = 16
+max_columns = 3
+fixed_column_width = 106
+icon_scale = 6.0
+item_0/text = "gy"
+item_0/icon = SubResource("AtlasTexture_3yadg")
+item_1/text = "Судак — ночной хищник с острым зрением, предпочитает чистую прохладную воду."
+item_1/icon = SubResource("AtlasTexture_nwy1w")
+item_2/text = "Окунь — полосатый хищник,     активно охотится днём и легко попадается  рыбакам.                     "
+item_2/icon = SubResource("AtlasTexture_g112c")
+item_3/text = "Сом — ночной донный хищник,   ориентируется усами и любит   глубокие  тихие  места.                     "
+item_3/icon = SubResource("AtlasTexture_qiu3e")
+item_4/text = "Осетр — крупная пресноводная  рыба, предпочитает глубокие и тихие  участки  рек.                     "
+item_4/icon = SubResource("AtlasTexture_gf7od")
+item_5/icon = SubResource("AtlasTexture_c2fmg")
+item_6/icon = SubResource("AtlasTexture_ljcmu")
+item_7/icon = SubResource("AtlasTexture_o0yht")
+item_8/icon = SubResource("AtlasTexture_imvcn")
+item_9/icon = SubResource("AtlasTexture_0d2a3")
+item_10/icon = SubResource("AtlasTexture_wg1an")
+item_11/icon = SubResource("AtlasTexture_enyat")
+item_12/icon = SubResource("AtlasTexture_11pk5")
+item_13/icon = SubResource("AtlasTexture_xos5o")
+item_14/icon = SubResource("AtlasTexture_0nh21")
+item_15/icon = SubResource("AtlasTexture_memak")
+item_15/selectable = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="TabContainer/Winter"]
+position = Vector2(159.65259, 149.9396)
+amount = 800
+lifetime = 5.0
+preprocess = 2.29
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_nwy1w")
+
+[node name="Summer" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Fall" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Spring" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[connection signal="item_selected" from="TabContainer/Winter/MarginContainer/ItemList" to="." method="_on_item_list_item_selected"]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://cq3njks2jf4xq"]
+
+[ext_resource type="Texture2D" uid="uid://df6e6xx1abl28" path="res://assets/battler/19070057_plantMilkModelSuite_walnut-20311_00002_.png" id="1_6niog"]
+[ext_resource type="Script" uid="uid://bi2dqbmphnten" path="res://Scripts/battler/EnemyRes.gd" id="1_nch6m"]
+
+[resource]
+script = ExtResource("1_nch6m")
+name = "Wolf"
+icon = ExtResource("1_6niog")
+hp = 10
+damage = 2
+miss_chance = 20.0
+ACTIONS = 1
+metadata/_custom_type_script = "uid://bi2dqbmphnten"

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Fish" load_steps=6 format=3 uid="uid://co4ytxumhn7jd"]
+
+[ext_resource type="Script" uid="uid://d1yro6b6vo61l" path="res://Scripts/fishing/fish_res.gd" id="1_hwbah"]
+[ext_resource type="Texture2D" uid="uid://bidxwp3pndlt1" path="res://assets/fishing/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png" id="2_vpo8g"]
+[ext_resource type="Script" uid="uid://bxut4md154vtc" path="res://Scripts/fishing/random_weight_res.gd" id="3_oe57g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xja1"]
+atlas = ExtResource("2_vpo8g")
+region = Rect2(28, 8, 16, 9)
+
+[sub_resource type="Resource" id="Resource_yggoi"]
+script = ExtResource("3_oe57g")
+min_weight = 4.0
+max_weight = 5.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[resource]
+script = ExtResource("1_hwbah")
+name = "Atlantic Salmon"
+texture = SubResource("AtlasTexture_3xja1")
+weightgenerator = SubResource("Resource_yggoi")
+behavior = Array[int]([-50, -25, 25, 50])
+SEASON = 0
+CATCH_TIME = 1
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"

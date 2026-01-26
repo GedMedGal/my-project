@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2fdykd7hhos7"]
+
+[ext_resource type="Script" uid="uid://3s1ci0wmo1n5" path="res://Scripts/fishing/time_changer.gd" id="1_oicag"]
+
+[node name="TimeChanger" type="CanvasModulate"]
+script = ExtResource("1_oicag")

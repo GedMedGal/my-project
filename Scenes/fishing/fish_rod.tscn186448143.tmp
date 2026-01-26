@@ -1,0 +1,134 @@
+[gd_scene load_steps=18 format=3 uid="uid://dcikagyj3v3pa"]
+
+[ext_resource type="Script" uid="uid://dmme5203jldci" path="res://Scripts/fishing/fish_rod.gd" id="1_x6ny0"]
+[ext_resource type="Script" uid="uid://d1yro6b6vo61l" path="res://Scripts/fishing/fish_res.gd" id="2_aq452"]
+[ext_resource type="Texture2D" uid="uid://bonvmb8m2vbfe" path="res://assets/fishing/4 Icons/Icons_09.png" id="2_bhag8"]
+[ext_resource type="Script" uid="uid://bxut4md154vtc" path="res://Scripts/fishing/random_weight_res.gd" id="3_tipop"]
+[ext_resource type="Texture2D" uid="uid://bidxwp3pndlt1" path="res://assets/fishing/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png" id="3_v46dr"]
+[ext_resource type="Texture2D" uid="uid://dw2ybe3pxbc2p" path="res://assets/fishing/fishrod.png" id="4_yggoi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xja1"]
+atlas = ExtResource("3_v46dr")
+region = Rect2(28, 8, 16, 9)
+
+[sub_resource type="Resource" id="Resource_yggoi"]
+script = ExtResource("3_tipop")
+min_weight = 1.1999999999970896
+max_weight = 23.30000000000291
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_v46dr"]
+script = ExtResource("2_aq452")
+name = "gy"
+texture = SubResource("AtlasTexture_3xja1")
+weightgenerator = SubResource("Resource_yggoi")
+behavior = Array[int]([-50, -25, 25, 50])
+RARITY = 0
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v46dr"]
+atlas = ExtResource("3_v46dr")
+region = Rect2(122, 6, 19, 11)
+
+[sub_resource type="Resource" id="Resource_3xja1"]
+script = ExtResource("3_tipop")
+min_weight = 2.0
+max_weight = 5.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_3wy64"]
+script = ExtResource("2_aq452")
+name = "cabras"
+texture = SubResource("AtlasTexture_v46dr")
+weightgenerator = SubResource("Resource_3xja1")
+behavior = Array[int]([-50, -70, 70, 50])
+RARITY = 1
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bhag8"]
+bounce = 0.6
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aq452"]
+size = Vector2(32, 32)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6ny0"]
+friction = 0.0
+bounce = 0.4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pymvu"]
+size = Vector2(32, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhag8"]
+size = Vector2(32, 56)
+
+[node name="FishRod" type="StaticBody2D" node_paths=PackedStringArray("block", "rigid_fish", "fishtimer", "block_area", "progress_bar")]
+position = Vector2(96, 96)
+script = ExtResource("1_x6ny0")
+possible_fish = Array[ExtResource("2_aq452")]([SubResource("Resource_v46dr"), SubResource("Resource_3wy64")])
+block = NodePath("block")
+rigid_fish = NodePath("fish")
+fishtimer = NodePath("FishTimer")
+block_area = NodePath("block/Area2D")
+progress_bar = NodePath("ProgressBar")
+
+[node name="Fishrod" type="Sprite2D" parent="."]
+position = Vector2(-96, -96)
+texture = ExtResource("4_yggoi")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 32)
+polygon = PackedVector2Array(-16, -104, -16, 168, 16, 168, 16, -104, -16, -104, -24, -112, 24, -112, 24, 176, -24, 176, -24, -112)
+
+[node name="fish" type="RigidBody2D" parent="."]
+position = Vector2(0, -24)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_bhag8")
+custom_integrator = true
+
+[node name="Icons09" type="Sprite2D" parent="fish"]
+texture = ExtResource("2_bhag8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fish"]
+shape = SubResource("RectangleShape2D_aq452")
+
+[node name="block" type="RigidBody2D" parent="."]
+position = Vector2(0, 184)
+collision_layer = 0
+physics_material_override = SubResource("PhysicsMaterial_x6ny0")
+custom_integrator = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_pymvu")
+
+[node name="ColorRect" type="ColorRect" parent="block"]
+anchors_preset = -1
+offset_left = -16.0
+offset_top = -40.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0, 0.8029748, 0, 0.62352943)
+
+[node name="Area2D" type="Area2D" parent="block"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block/Area2D"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_bhag8")
+
+[node name="FishTimer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = -1
+offset_left = 24.0
+offset_top = -80.0
+offset_right = 56.0
+offset_bottom = 208.0
+fill_mode = 3
+
+[connection signal="timeout" from="FishTimer" to="." method="_on_fish_timer_timeout"]
+[connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]

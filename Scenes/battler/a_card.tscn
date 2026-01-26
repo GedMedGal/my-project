@@ -1,0 +1,233 @@
+[gd_scene load_steps=9 format=3 uid="uid://du0sqjt8n45sv"]
+
+[ext_resource type="Script" uid="uid://xifxaj5614lj" path="res://Scripts/battler/a_card.gd" id="1_2ra0c"]
+[ext_resource type="Texture2D" uid="uid://dc46jftet83es" path="res://assets/battler/37406-687897703-Polar bear in winter forest, insane details, intricate details, hyperdetailed, hdr, faded, pixel art _lora_pixelbuildings128-v1_.png" id="2_w0n2l"]
+[ext_resource type="Texture2D" uid="uid://ue1sxruq6m53" path="res://Sprite-0001.png" id="3_npxqv"]
+
+[sub_resource type="Animation" id="Animation_rrl86"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:pivot_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_swp0i"]
+resource_name = "damage"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.6, 0.6), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0517e"]
+resource_name = "miss"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Status:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Status:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Status:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-64, -16), Vector2(-64, -192)]
+}
+
+[sub_resource type="Animation" id="Animation_b5mit"]
+resource_name = "punch"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.6, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.2617994, 0.2617994, 0.2617994, 0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.6, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.7199997, 0.7199997), Vector2(1.2250546, 1.2250546), Vector2(1.5058675, 1.5058675), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:pivot_offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.6, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-300, 0), Vector2(-300, 0), Vector2(0, 0), Vector2(192, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l3jqw"]
+_data = {
+&"RESET": SubResource("Animation_rrl86"),
+&"damage": SubResource("Animation_swp0i"),
+&"miss": SubResource("Animation_0517e"),
+&"punch": SubResource("Animation_b5mit")
+}
+
+[node name="ACard" type="Control"]
+layout_mode = 3
+anchor_left = -0.056
+anchor_top = -0.16000001
+anchor_right = 0.056
+anchor_bottom = 0.17300001
+offset_left = 10.08
+offset_top = 51.200005
+offset_right = -10.08
+offset_bottom = -55.36
+script = ExtResource("1_2ra0c")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -48.0
+offset_top = -80.0
+offset_right = 48.0
+offset_bottom = 85.33333
+texture = ExtResource("2_w0n2l")
+expand_mode = 1
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = -48.0
+offset_top = -80.0
+offset_right = 48.0
+offset_bottom = -53.0
+value = 100.0
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = -64.0
+offset_top = -112.0
+offset_right = 61.0
+offset_bottom = -79.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Status" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -64.0
+offset_top = -16.0
+offset_right = 61.0
+offset_bottom = 17.0
+text = "miss"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Hp" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -56.0
+offset_top = 88.0
+offset_right = -16.0
+offset_bottom = 111.0
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Damage" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 16.0
+offset_top = 88.0
+offset_right = 56.0
+offset_bottom = 111.0
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_l3jqw")
+}
+
+[node name="Sprite0001" type="Sprite2D" parent="."]
+position = Vector2(-48, -80)
+scale = Vector2(0.74999994, 0.7777778)
+texture = ExtResource("3_npxqv")
+centered = false

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dnk22jdwbsj2j"]
+
+[ext_resource type="Script" uid="uid://bi2dqbmphnten" path="res://Scripts/battler/EnemyRes.gd" id="1_mdyec"]
+
+[resource]
+script = ExtResource("1_mdyec")
+ACTIONS = 0

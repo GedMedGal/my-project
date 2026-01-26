@@ -1,0 +1,485 @@
+[gd_scene load_steps=63 format=3 uid="uid://dcikagyj3v3pa"]
+
+[ext_resource type="Script" uid="uid://dmme5203jldci" path="res://Scripts/fishing/fish_rod.gd" id="1_x6ny0"]
+[ext_resource type="Script" uid="uid://d1yro6b6vo61l" path="res://Scripts/fishing/fish_res.gd" id="2_aq452"]
+[ext_resource type="Texture2D" uid="uid://bonvmb8m2vbfe" path="res://assets/fishing/4 Icons/Icons_09.png" id="2_bhag8"]
+[ext_resource type="Resource" uid="uid://co4ytxumhn7jd" path="res://common_fish.tres" id="3_3xja1"]
+[ext_resource type="Script" uid="uid://bxut4md154vtc" path="res://Scripts/fishing/random_weight_res.gd" id="3_tipop"]
+[ext_resource type="Texture2D" uid="uid://bidxwp3pndlt1" path="res://assets/fishing/PC _ Computer - Stardew Valley - Animals - Aquarium Fishes.png" id="3_v46dr"]
+[ext_resource type="Texture2D" uid="uid://dw2ybe3pxbc2p" path="res://assets/fishing/fishrod.png" id="4_yggoi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v46dr"]
+atlas = ExtResource("3_v46dr")
+region = Rect2(122, 6, 19, 11)
+
+[sub_resource type="Resource" id="Resource_3xja1"]
+script = ExtResource("3_tipop")
+min_weight = 2.0
+max_weight = 3.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_3wy64"]
+script = ExtResource("2_aq452")
+name = "Rainbow Trout"
+texture = SubResource("AtlasTexture_v46dr")
+weightgenerator = SubResource("Resource_3xja1")
+behavior = Array[int]([-50, -70, 70, 50])
+RARITY = 1
+SEASON = 0
+CATCH_TIME = 1
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_6gion"]
+script = ExtResource("3_tipop")
+min_weight = 5.0
+max_weight = 10.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_bmmqa"]
+script = ExtResource("2_aq452")
+name = "Northern Pike"
+weightgenerator = SubResource("Resource_6gion")
+behavior = Array[int]([-100, -50, 70])
+RARITY = 2
+SEASON = 0
+CATCH_TIME = 3
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_uv5xb"]
+script = ExtResource("3_tipop")
+min_weight = 2.0
+max_weight = 4.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_oba8n"]
+script = ExtResource("2_aq452")
+name = "Walleye"
+weightgenerator = SubResource("Resource_uv5xb")
+behavior = Array[int]([-150, -125, -70, 0, 70, 125, 150])
+RARITY = 3
+SEASON = 0
+CATCH_TIME = 1
+CATCH_EVENT = "SNOW"
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_raura"]
+script = ExtResource("3_tipop")
+min_weight = 1.0
+max_weight = 3.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_yeppo"]
+script = ExtResource("2_aq452")
+name = "Bass"
+weightgenerator = SubResource("Resource_raura")
+behavior = Array[int]([-20, -50, 20, 50])
+SEASON = 0
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_h766c"]
+script = ExtResource("3_tipop")
+min_weight = 0.1999999999970896
+max_weight = 0.5
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_2g20r"]
+script = ExtResource("2_aq452")
+name = "Bluegill"
+weightgenerator = SubResource("Resource_h766c")
+behavior = Array[int]([-50, 50])
+SEASON = 0
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_e6wde"]
+script = ExtResource("3_tipop")
+min_weight = 0.3000000000029104
+max_weight = 1.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_csg23"]
+script = ExtResource("2_aq452")
+name = "Perch"
+weightgenerator = SubResource("Resource_e6wde")
+behavior = Array[int]([-80, -40, 40, 80])
+RARITY = 1
+SEASON = 0
+CATCH_TIME = 1
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_11gbt"]
+script = ExtResource("3_tipop")
+min_weight = 5.0
+max_weight = 20.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_jij4i"]
+script = ExtResource("2_aq452")
+name = "Catfish"
+weightgenerator = SubResource("Resource_11gbt")
+behavior = Array[int]([-150, -70, -40, 40, 70, 150])
+RARITY = 2
+SEASON = 0
+CATCH_TIME = 2
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_oy5c7"]
+script = ExtResource("3_tipop")
+min_weight = 4.0
+max_weight = 15.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_sndoy"]
+script = ExtResource("2_aq452")
+name = "Carp"
+weightgenerator = SubResource("Resource_oy5c7")
+behavior = Array[int]([-60, -30, 30, 60])
+RARITY = 1
+SEASON = 0
+CATCH_TIME = 1
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_6gqns"]
+script = ExtResource("2_aq452")
+name = "Atlantic Cod"
+behavior = Array[int]([-200, -170, -50, 50, 170, 200])
+RARITY = 3
+SEASON = 0
+CATCH_TIME = 3
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_ln4j8"]
+script = ExtResource("3_tipop")
+min_weight = 3.0
+max_weight = 6.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_w2kma"]
+script = ExtResource("2_aq452")
+name = "Rainbow Runner"
+weightgenerator = SubResource("Resource_ln4j8")
+behavior = Array[int]([-60, -40, 40, 60])
+SEASON = 0
+CATCH_TIME = 2
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_nc5kh"]
+script = ExtResource("3_tipop")
+min_weight = 0.10000000000582077
+max_weight = 0.40000000000873115
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_s4c16"]
+script = ExtResource("2_aq452")
+name = "Roach"
+weightgenerator = SubResource("Resource_nc5kh")
+behavior = Array[int]([-60, -40, 40, 60])
+SEASON = 0
+CATCH_TIME = 1
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_a2hnq"]
+script = ExtResource("3_tipop")
+min_weight = 0.05000000000291038
+max_weight = 0.15000000000873115
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_p8cta"]
+script = ExtResource("2_aq452")
+name = "Bleak"
+weightgenerator = SubResource("Resource_a2hnq")
+behavior = Array[int]([-40, -20, 0, 20])
+SEASON = 0
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_7x0qd"]
+script = ExtResource("3_tipop")
+min_weight = 0.10000000000582077
+max_weight = 0.3000000000029104
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_0xeyi"]
+script = ExtResource("2_aq452")
+name = "Gudgeon"
+weightgenerator = SubResource("Resource_7x0qd")
+behavior = Array[int]([-50, -25, 25, 50])
+SEASON = 0
+CATCH_EVENT = "FOLIAGE"
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_w2t8f"]
+script = ExtResource("3_tipop")
+min_weight = 0.5
+max_weight = 1.5
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_oo75g"]
+script = ExtResource("2_aq452")
+name = "Silver Bream"
+weightgenerator = SubResource("Resource_w2t8f")
+behavior = Array[int]([-60, -20, 0, 20, 60])
+SEASON = 0
+CATCH_EVENT = "FOLIAGE"
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_u5lx4"]
+script = ExtResource("3_tipop")
+min_weight = 0.3000000000029104
+max_weight = 0.9000000000087311
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_em65v"]
+script = ExtResource("2_aq452")
+name = "Rudd"
+weightgenerator = SubResource("Resource_u5lx4")
+behavior = Array[int]([-40, -10, 0, 10, 40])
+SEASON = 0
+CATCH_EVENT = "FOLIAGE"
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_xgidl"]
+script = ExtResource("3_tipop")
+min_weight = 0.40000000000873115
+max_weight = 2.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_afw4y"]
+script = ExtResource("2_aq452")
+name = "Grayling"
+weightgenerator = SubResource("Resource_xgidl")
+behavior = Array[int]([-90, -60, 0, 60, 90])
+RARITY = 1
+SEASON = 0
+CATCH_TIME = 1
+CATCH_EVENT = "FOLIAGE"
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_2kfhj"]
+script = ExtResource("3_tipop")
+min_weight = 1.1999999999970896
+max_weight = 6.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_76yk1"]
+script = ExtResource("2_aq452")
+name = "Zander"
+weightgenerator = SubResource("Resource_2kfhj")
+behavior = Array[int]([-80, -70, 70, 80])
+RARITY = 1
+SEASON = 0
+CATCH_TIME = 3
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_k760d"]
+script = ExtResource("3_tipop")
+min_weight = 0.6000000000058208
+max_weight = 3.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_sjv40"]
+script = ExtResource("2_aq452")
+name = "Brown Trout"
+weightgenerator = SubResource("Resource_k760d")
+behavior = Array[int]([-80, -50, 0, 50, 80])
+RARITY = 1
+SEASON = 0
+CATCH_TIME = 2
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_c2xu8"]
+script = ExtResource("3_tipop")
+min_weight = 0.8000000000029104
+max_weight = 2.5
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_tctpu"]
+script = ExtResource("2_aq452")
+name = "Whitefish"
+weightgenerator = SubResource("Resource_c2xu8")
+behavior = Array[int]([-110, -60, 0, 60, 110])
+RARITY = 1
+SEASON = 0
+CATCH_EVENT = "SNOW"
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_m8sba"]
+script = ExtResource("3_tipop")
+min_weight = 0.6999999999970896
+max_weight = 2.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_qfb45"]
+script = ExtResource("2_aq452")
+name = "Omul"
+weightgenerator = SubResource("Resource_m8sba")
+behavior = Array[int]([-110, -80, 80, 110])
+RARITY = 2
+SEASON = 0
+CATCH_TIME = 1
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_fm037"]
+script = ExtResource("3_tipop")
+min_weight = 2.0
+max_weight = 6.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_4elkn"]
+script = ExtResource("2_aq452")
+name = "Muksun"
+weightgenerator = SubResource("Resource_fm037")
+behavior = Array[int]([-120, -80, 0, 80, 120])
+RARITY = 2
+SEASON = 0
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_o7xnd"]
+script = ExtResource("3_tipop")
+min_weight = 1.0
+max_weight = 6.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_t35ov"]
+script = ExtResource("2_aq452")
+name = "Lenok"
+weightgenerator = SubResource("Resource_o7xnd")
+behavior = Array[int]([-90, -50, 50, 90])
+RARITY = 2
+SEASON = 0
+CATCH_TIME = 1
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_q0iuh"]
+script = ExtResource("3_tipop")
+min_weight = 1.5
+max_weight = 4.5
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_cke2r"]
+script = ExtResource("2_aq452")
+name = "Chir"
+weightgenerator = SubResource("Resource_q0iuh")
+behavior = Array[int]([-120, -90, 90, 120])
+RARITY = 2
+SEASON = 0
+CATCH_EVENT = "FOLIAGE"
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_ucv23"]
+script = ExtResource("3_tipop")
+min_weight = 15.0
+max_weight = 50.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_3ixnq"]
+script = ExtResource("2_aq452")
+name = "Snow Taimen"
+weightgenerator = SubResource("Resource_ucv23")
+behavior = Array[int]([-170, -150, -60, 0, 60, 150, 170])
+RARITY = 3
+SEASON = 0
+CATCH_TIME = 1
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="Resource" id="Resource_3kts6"]
+script = ExtResource("3_tipop")
+min_weight = 50.0
+max_weight = 200.0
+metadata/_custom_type_script = "uid://bxut4md154vtc"
+
+[sub_resource type="Resource" id="Resource_5d832"]
+script = ExtResource("2_aq452")
+name = "Ancient Sturgeon"
+weightgenerator = SubResource("Resource_3kts6")
+behavior = Array[int]([-240, -200, -170, -150, -140, 0, 140, 150, 170, 200, 240])
+RARITY = 3
+SEASON = 0
+CATCH_TIME = 3
+metadata/_custom_type_script = "uid://d1yro6b6vo61l"
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bhag8"]
+bounce = 0.6
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aq452"]
+size = Vector2(32, 32)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x6ny0"]
+friction = 0.0
+bounce = 0.4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pymvu"]
+size = Vector2(32, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhag8"]
+size = Vector2(32, 56)
+
+[node name="FishRod" type="StaticBody2D" node_paths=PackedStringArray("block", "rigid_fish", "fishtimer", "block_area", "progress_bar")]
+position = Vector2(96, 96)
+script = ExtResource("1_x6ny0")
+possible_winter_fish = Array[ExtResource("2_aq452")]([ExtResource("3_3xja1"), SubResource("Resource_3wy64"), SubResource("Resource_bmmqa"), SubResource("Resource_oba8n"), SubResource("Resource_yeppo"), SubResource("Resource_2g20r"), SubResource("Resource_csg23"), SubResource("Resource_jij4i"), SubResource("Resource_sndoy"), SubResource("Resource_6gqns"), SubResource("Resource_w2kma"), SubResource("Resource_s4c16"), SubResource("Resource_p8cta"), SubResource("Resource_0xeyi"), SubResource("Resource_oo75g"), SubResource("Resource_em65v"), SubResource("Resource_afw4y"), SubResource("Resource_76yk1"), SubResource("Resource_sjv40"), SubResource("Resource_tctpu"), SubResource("Resource_qfb45"), SubResource("Resource_4elkn"), SubResource("Resource_t35ov"), SubResource("Resource_cke2r"), SubResource("Resource_3ixnq"), SubResource("Resource_5d832")])
+block = NodePath("block")
+rigid_fish = NodePath("fish")
+fishtimer = NodePath("FishTimer")
+block_area = NodePath("block/Area2D")
+progress_bar = NodePath("ProgressBar")
+
+[node name="Fishrod" type="Sprite2D" parent="."]
+position = Vector2(-96, -96)
+texture = ExtResource("4_yggoi")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 32)
+polygon = PackedVector2Array(-16, -104, -16, 168, 16, 168, 16, -104, -16, -104, -24, -112, 24, -112, 24, 176, -24, 176, -24, -112)
+
+[node name="fish" type="RigidBody2D" parent="."]
+position = Vector2(0, -24)
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_bhag8")
+custom_integrator = true
+
+[node name="Icons09" type="Sprite2D" parent="fish"]
+texture = ExtResource("2_bhag8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fish"]
+shape = SubResource("RectangleShape2D_aq452")
+
+[node name="block" type="RigidBody2D" parent="."]
+position = Vector2(0, 184)
+collision_layer = 0
+physics_material_override = SubResource("PhysicsMaterial_x6ny0")
+custom_integrator = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_pymvu")
+
+[node name="ColorRect" type="ColorRect" parent="block"]
+anchors_preset = -1
+offset_left = -16.0
+offset_top = -40.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0, 0.8029748, 0, 0.62352943)
+
+[node name="Area2D" type="Area2D" parent="block"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block/Area2D"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_bhag8")
+
+[node name="FishTimer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = -1
+offset_left = 24.0
+offset_top = -80.0
+offset_right = 56.0
+offset_bottom = 208.0
+fill_mode = 3
+
+[connection signal="timeout" from="FishTimer" to="." method="_on_fish_timer_timeout"]
+[connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]

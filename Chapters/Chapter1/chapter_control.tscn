@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1qw50na4xdrc"]
+
+[ext_resource type="Script" uid="uid://c5hquiilqg3bf" path="res://Scripts/battler/chapter_control.gd" id="1_1bgg7"]
+
+[node name="ChapterControl" type="Node"]
+script = ExtResource("1_1bgg7")

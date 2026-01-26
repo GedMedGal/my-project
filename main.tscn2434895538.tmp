@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://ct08hlmb4o7k"]
+
+[ext_resource type="Script" uid="uid://ctovlkivbqqkr" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://c5hquiilqg3bf" path="res://chapter_control.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://wh6e3ce0kgv1" path="res://player.gd" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bfxa68hsrxsbk" path="res://7d17532a428354ee700ebc373efadec8.jpg" id="3_272bh"]
+[ext_resource type="Texture2D" uid="uid://desgea4htjck3" path="res://icon.svg" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://cvh7kghvrlm5h" path="res://enemy.gd" id="5_lquwl"]
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("ChapterControler", "player")]
+script = ExtResource("1_ig7tw")
+ChapterControler = NodePath("ChapterControl")
+player = NodePath("Player")
+
+[node name="7d17532a428354Ee700Ebc373Efadec8" type="Sprite2D" parent="."]
+position = Vector2(575, 326)
+scale = Vector2(1.5625, 1.5797101)
+texture = ExtResource("3_272bh")
+
+[node name="ChapterControl" type="Node" parent="." node_paths=PackedStringArray("main")]
+script = ExtResource("2_0xm2m")
+main = NodePath("..")
+metadata/_custom_type_script = "uid://c5hquiilqg3bf"
+
+[node name="Player" type="Node2D" parent="." node_paths=PackedStringArray("main", "attack_button")]
+script = ExtResource("3_1bvp3")
+main = NodePath("..")
+attack_button = NodePath("AttackButton")
+
+[node name="HP" type="Label" parent="Player"]
+anchors_preset = -1
+offset_right = 196.0
+offset_bottom = 131.0
+
+[node name="AttackButton" type="TextureButton" parent="Player"]
+anchors_preset = -1
+offset_left = 332.0
+offset_top = 417.0
+offset_right = 460.0
+offset_bottom = 545.0
+texture_normal = ExtResource("3_h2yge")
+
+[node name="TextureButton2" type="TextureButton" parent="Player"]
+anchors_preset = -1
+offset_left = 645.0
+offset_top = 424.0
+offset_right = 773.0
+offset_bottom = 552.0
+texture_normal = ExtResource("3_h2yge")
+
+[node name="Score" type="Label" parent="Player"]
+anchors_preset = -1
+offset_left = 845.0
+offset_top = 1.0
+offset_right = 1151.0869
+offset_bottom = 177.0
+
+[node name="Enemy" type="Node2D" parent="." node_paths=PackedStringArray("main", "player")]
+script = ExtResource("5_lquwl")
+main = NodePath("..")
+player = NodePath("../Player")
+
+[node name="Marker2D" type="Marker2D" parent="Enemy"]
+position = Vector2(557, 259)
+
+[connection signal="chapter_update" from="." to="ChapterControl" method="_on_main_chapter_update"]
+[connection signal="enemy_turn" from="." to="Enemy" method="_on_main_enemy_turn"]
+[connection signal="player_update" from="." to="Player" method="_on_main_player_update"]
+[connection signal="pressed" from="Player/AttackButton" to="Player" method="_on_attack_button_pressed"]
+[connection signal="enemy_dead" from="Enemy" to="." method="_on_enemy_enemy_dead"]
