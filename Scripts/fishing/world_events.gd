@@ -28,6 +28,11 @@ func event_start():
 			particles.emitting = false
 			if particles.name == current_event:
 				particles.emitting = true
+		if particles is ColorRect:
+			if particles.name == current_event:
+				particles.visible = true
+			else:
+				particles.visible = false
 	
 	var rand = randi_range(0,100)
 	if rand > 70:

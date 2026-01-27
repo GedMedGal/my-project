@@ -165,7 +165,7 @@ metadata/_custom_type_script = "uid://d1yro6b6vo61l"
 [sub_resource type="Resource" id="Resource_nc5kh"]
 script = ExtResource("3_tipop")
 min_weight = 0.10000000000582077
-max_weight = 0.40000000000873115
+max_weight = 0.4000000000087311
 metadata/_custom_type_script = "uid://bxut4md154vtc"
 
 [sub_resource type="Resource" id="Resource_s4c16"]
@@ -238,7 +238,7 @@ metadata/_custom_type_script = "uid://d1yro6b6vo61l"
 
 [sub_resource type="Resource" id="Resource_xgidl"]
 script = ExtResource("3_tipop")
-min_weight = 0.40000000000873115
+min_weight = 0.4000000000087311
 max_weight = 2.0
 metadata/_custom_type_script = "uid://bxut4md154vtc"
 
@@ -374,7 +374,7 @@ metadata/_custom_type_script = "uid://bxut4md154vtc"
 script = ExtResource("2_aq452")
 name = "Snow Taimen"
 weightgenerator = SubResource("Resource_ucv23")
-behavior = Array[int]([-170, -150, -60, 0, 60, 150, 170])
+behavior = Array[int]([-170, -150, -60, 60, 150, 170])
 RARITY = 3
 SEASON = 0
 CATCH_TIME = 1
@@ -393,7 +393,6 @@ weightgenerator = SubResource("Resource_3kts6")
 behavior = Array[int]([-240, -200, -170, -150, -140, 0, 140, 150, 170, 200, 240])
 RARITY = 3
 SEASON = 0
-CATCH_TIME = 3
 metadata/_custom_type_script = "uid://d1yro6b6vo61l"
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bhag8"]

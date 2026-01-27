@@ -1,11 +1,11 @@
 extends StaticBody2D
 
-@export_category('SEASONS FISH ARRAYS')
+@export_group('SEASONS FISH ARRAYS')
 @export var possible_winter_fish: Array[Fish] #season id = 0
 @export var possible_spring_fish: Array[Fish] #1
 @export var possible_summer_fish: Array[Fish] #2
 @export var possible_fall_fish: Array[Fish] #3
-
+@export_group('')
 
 
 @export var block: RigidBody2D
@@ -34,7 +34,7 @@ func _ready() -> void:
 func fish_picker():
 	var candidates: Array[Fish] = []
 	var random = randi_range(0,100)
-	print(random)
+
 	for i in get_current_fish_array():
 		if i.CATCH_TIME == TimeChanger.current_time \
 		and i.CATCH_EVENT == WorldEvents.current_event:
@@ -49,7 +49,7 @@ func fish_picker():
 					candidates.append(i)
 			else:
 				candidates.append(i)
-	print(candidates)
+
 	if candidates.is_empty():
 		return load("res://common_fish.tres")
 	
@@ -108,4 +108,4 @@ func catch_end(result: bool, result_fish: Fish = null):
 
 func _on_fish_timer_timeout() -> void:
 	rigid_fish.linear_velocity = Vector2(0,fish.behavior.pick_random())
-	fishtimer.wait_time = randf_range(0.05,3-fish.RARITY)
+	fishtimer.wait_time = randf_range(0.05,4-fish.RARITY)
