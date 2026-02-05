@@ -57,11 +57,11 @@ func _on_fish_timer_timeout() -> void:
 
 func sign_settings():
 	sign.show()
+	sign.position.y = 148
 	sign_tween = get_tree().create_tween().set_loops()
-	sign_tween.tween_property(sign,'position:y', sign.position.y - 5, 1)
-	sign_tween.tween_property(sign,'position:y', sign.position.y + 5, 1)
+	sign_tween.tween_property(sign,'position:y', sign.position.y - 5, 1).finished
+	sign_tween.tween_property(sign,'position:y', sign.position.y + 5, 1).finished
 	$CatchingTimer.start(3)
-
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:

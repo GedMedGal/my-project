@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://c7jy4w71ub3if" path="res://Scripts/chat_server_controller.gd" id="1_pmvv1"]
 
 [node name="ChatServerController" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_pmvv1")

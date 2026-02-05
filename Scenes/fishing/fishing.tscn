@@ -337,7 +337,7 @@ seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n1a5l"]
 shader = ExtResource("17_cyal1")
-shader_parameter/water_color = Color(0.1602079, 0.7589362, 0.8837891, 1)
+shader_parameter/water_color = Color(0.09508156, 0.6079635, 0.7086033, 1)
 shader_parameter/wave_noise = SubResource("NoiseTexture2D_gnpls")
 
 [sub_resource type="GDScript" id="GDScript_n1a5l"]
@@ -363,7 +363,7 @@ point_light = NodePath("CanvasLayer/PointLight2D")
 
 [node name="Parallax" type="Node2D" parent="."]
 
-[node name="8" type="Sprite2D" parent="Parallax"]
+[node name="Sky" type="Sprite2D" parent="Parallax"]
 position = Vector2(92, -37.49999)
 scale = Vector2(1, 1.9027778)
 texture = ExtResource("2_kv4ip")

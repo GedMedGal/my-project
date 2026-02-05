@@ -11,7 +11,6 @@ func _ready():
 	# Подписка на сигналы
 	EventBus.end_cathing.connect(on_end_catching)
 	chat.message_received.connect(on_message_received)
-	chat.connect_to_server()
 	input.text_submitted.connect(_on_Input_text_submitted)
 
 func _on_Input_text_submitted(new_text):

@@ -4,6 +4,7 @@ class_name TimeChanger
 @export var night_color := Color(0.1, 0.1, 0.2)
 @export var day_color := Color(1, 1, 1)
 
+
 @export var sunrise := 6.0
 @export var sunset := 20.0
 
@@ -28,7 +29,8 @@ func update_light(hour: int):
 	current_hour = hour
 	var k := get_day_factor(float(hour))
 	var target_color := night_color.lerp(day_color, k)
-
+	
+	
 	if hour >= 6 and hour < 12:
 		current_time = CURRENT_TIME.MORNING
 	elif hour >= 12 and hour < 18:
